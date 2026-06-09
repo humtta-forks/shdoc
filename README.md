@@ -59,20 +59,18 @@ shdoc --update=quiet
 You can generate completion for `bash`, `zsh` or `fish` shell.
 
 Bash:
+```bash
+shdoc --completion=bash | sudo tee /etc/bash_completion.d/shdoc > /dev/null
 ```
-sudo shdoc --completion=bash 1> /etc/bash_completion.d/shdoc
-```
-
 
 ZSH:
+```bash
+shdoc --completion=zsh | sudo tee /usr/share/zsh/site-functions/shdoc > /dev/null
 ```
-sudo shdoc --completion=zsh 1> /usr/share/zsh/site-functions/shdoc
-```
-
 
 Fish:
-```
-sudo shdoc --completion=fish 1> /usr/share/fish/vendor_completions.d/shdoc.fish
+```bash
+shdoc --completion=fish | sudo tee /usr/share/fish/vendor_completions.d/shdoc.fish > /dev/null
 ```
 
 ### Usage
