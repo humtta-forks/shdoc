@@ -11,22 +11,22 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/essentialkaos/ek/v13/fmtc"
-	"github.com/essentialkaos/ek/v13/fsutil"
-	"github.com/essentialkaos/ek/v13/options"
-	"github.com/essentialkaos/ek/v13/pager"
-	"github.com/essentialkaos/ek/v13/support"
-	"github.com/essentialkaos/ek/v13/support/apps"
-	"github.com/essentialkaos/ek/v13/support/deps"
-	"github.com/essentialkaos/ek/v13/terminal/tty"
-	"github.com/essentialkaos/ek/v13/usage"
-	"github.com/essentialkaos/ek/v13/usage/completion/bash"
-	"github.com/essentialkaos/ek/v13/usage/completion/fish"
-	"github.com/essentialkaos/ek/v13/usage/completion/zsh"
-	"github.com/essentialkaos/ek/v13/usage/man"
-	"github.com/essentialkaos/ek/v13/usage/update"
+	"github.com/essentialkaos/ek/v14/fmtc"
+	"github.com/essentialkaos/ek/v14/fsutil"
+	"github.com/essentialkaos/ek/v14/options"
+	"github.com/essentialkaos/ek/v14/pager"
+	"github.com/essentialkaos/ek/v14/support"
+	"github.com/essentialkaos/ek/v14/support/apps"
+	"github.com/essentialkaos/ek/v14/support/deps"
+	"github.com/essentialkaos/ek/v14/terminal/tty"
+	"github.com/essentialkaos/ek/v14/usage"
+	"github.com/essentialkaos/ek/v14/usage/completion/bash"
+	"github.com/essentialkaos/ek/v14/usage/completion/fish"
+	"github.com/essentialkaos/ek/v14/usage/completion/zsh"
+	"github.com/essentialkaos/ek/v14/usage/man"
+	"github.com/essentialkaos/ek/v14/usage/update"
 
-	term "github.com/essentialkaos/ek/v13/terminal"
+	term "github.com/essentialkaos/ek/v14/terminal"
 
 	"github.com/essentialkaos/shdoc/parser"
 	"github.com/essentialkaos/shdoc/render/template"
@@ -37,7 +37,7 @@ import (
 
 const (
 	APP  = "SHDoc"
-	VER  = "0.10.2"
+	VER  = "0.11.0"
 	DESC = "Tool for viewing and exporting docs for shell scripts"
 )
 
@@ -81,7 +81,7 @@ func Run(gitRev string, gomod []byte) {
 
 	if !errs.IsEmpty() {
 		term.Error("Options parsing errors:")
-		term.Error(errs.Error(" - "))
+		term.Error(errs.ErrorWithPrefix(" - "))
 		os.Exit(1)
 	}
 
@@ -147,7 +147,7 @@ func readDocs(file string, pattern string) error {
 
 	if !errs.IsEmpty() {
 		term.Error("Shell script documentation parsing errors:")
-		term.Error(errs.Error(" - "))
+		term.Error(errs.ErrorWithPrefix(" - "))
 		fmtc.NewLine()
 		return fmt.Errorf("Can't parse script documentation")
 	}
