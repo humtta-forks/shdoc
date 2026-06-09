@@ -83,8 +83,8 @@ sudo shdoc --completion=fish 1> /usr/share/fish/vendor_completions.d/shdoc.fish
 
 | Branch | CI       | Coveralls |
 |--------|----------|-----------|
-| `master` | [![CI](https://github.com/essentialkaos/shdoc/actions/workflows/ci.yml/badge.svg?branch=master)](https://kaos.sh/w/shdoc/ci?query=branch:master) | [![Coverage Status](https://kaos.sh/c/shdoc.svg?branch=master)](https://kaos.sh/c/shdoc?branch=master) |
-| `develop` | [![CI](https://github.com/essentialkaos/shdoc/actions/workflows/ci.yml/badge.svg?branch=develop)](https://kaos.sh/w/shdoc/ci?query=branch:develop) | [![Coverage Status](https://kaos.sh/c/shdoc.svg?branch=develop)](https://kaos.sh/c/shdoc?branch=develop) |
+| `master` | [![CI](https://github.com/essentialkaos/shdoc/actions/workflows/ci.yml/badge.svg?branch=master)](https://kaos.sh/w/shdoc/ci?query=branch:master) | [![Coverage Status](https://coveralls.io/repos/github/essentialkaos/shdoc/badge.svg?branch=master)](https://kaos.sh/c/shdoc?branch=master) |
+| `develop` | [![CI](https://github.com/essentialkaos/shdoc/actions/workflows/ci.yml/badge.svg?branch=develop)](https://kaos.sh/w/shdoc/ci?query=branch:develop) | [![Coverage Status](https://coveralls.io/repos/github/essentialkaos/shdoc/badge.svg?branch=develop)](https://kaos.sh/c/shdoc?branch=develop) |
 
 ### Contributing
 
