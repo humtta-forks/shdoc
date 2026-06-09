@@ -1,12 +1,12 @@
 <p align="center"><a href="#readme"><img src=".github/images/card.svg"/></a></p>
 
 <p align="center">
-  <a href="https://kaos.sh/r/shdoc"><img src="https://kaos.sh/r/shdoc.svg" alt="GoReportCard" /></a>
-  <a href="https://kaos.sh/y/shdoc"><img src="https://kaos.sh/y/d8aa5c8aa68f43f6aa91872929a1695f.svg" alt="Codacy badge" /></a>
-  <a href="https://kaos.sh/c/shdoc"><img src="https://kaos.sh/c/shdoc.svg" alt="Coverage Status" /></a>
+  <a href="https://kaos.sh/r/shdoc"><img src="https://goreportcard.com/badge/github.com/essentialkaos/shdoc" alt="GoReportCard" /></a>
+  <a href="https://kaos.sh/y/shdoc"><img src="https://app.codacy.com/project/badge/Grade/d8aa5c8aa68f43f6aa91872929a1695f" alt="Codacy badge" /></a>
+  <a href="https://kaos.sh/c/shdoc"><img src="https://coveralls.io/repos/github/essentialkaos/shdoc/badge.svg" alt="Coverage Status" /></a>
   <br/>
-  <a href="https://kaos.sh/w/shdoc/ci"><img src="https://kaos.sh/w/shdoc/ci.svg" alt="GitHub Actions CI Status" /></a>
-  <a href="https://kaos.sh/w/shdoc/codeql"><img src="https://kaos.sh/w/shdoc/codeql.svg" alt="GitHub Actions CodeQL Status" /></a>
+  <a href="https://kaos.sh/w/shdoc/ci"><img src="https://github.com/essentialkaos/shdoc/actions/workflows/ci.yml/badge.svg" alt="GitHub Actions CI Status" /></a>
+  <a href="https://kaos.sh/w/shdoc/codeql"><img src="https://github.com/essentialkaos/shdoc/actions/workflows/codeql.yml/badge.svg" alt="GitHub Actions CodeQL Status" /></a>
   <a href="#license"><img src=".github/images/license.svg"/></a>
 </p>
 
@@ -24,7 +24,7 @@
 
 #### From source
 
-Make sure you have a working Go [1.23+](https://github.com/essentialkaos/.github/blob/master/GO-VERSION-SUPPORT.md) workspace ([instructions](https://go.dev/doc/install)), then:
+Make sure you have a working Go [1.25+](https://github.com/essentialkaos/.github/blob/master/GO-VERSION-SUPPORT.md) workspace ([instructions](https://go.dev/doc/install)), then:
 
 ```bash
 go install github.com/essentialkaos/shdoc@latest
@@ -34,10 +34,24 @@ go install github.com/essentialkaos/shdoc@latest
 
 You can download prebuilt binaries for Linux and macOS from [EK Apps Repository](https://apps.kaos.st/shdoc/latest).
 
-To install the latest prebuilt version of bibop, do:
+To install the latest prebuilt version of `shdoc`, do:
 
 ```bash
 bash <(curl -fsSL https://apps.kaos.st/get) shdoc
+```
+
+### Upgrading
+
+Since version `0.11.0` you can update `shdoc` to the latest release using [self-update feature](https://github.com/essentialkaos/.github/blob/master/APPS-UPDATE.md):
+
+```bash
+shdoc --update
+```
+
+This command will runs a self-update in interactive mode. If you want to run a quiet update (_no output_), use the following command:
+
+```bash
+shdoc --update=quiet
 ```
 
 ### Command-line completion
@@ -45,20 +59,18 @@ bash <(curl -fsSL https://apps.kaos.st/get) shdoc
 You can generate completion for `bash`, `zsh` or `fish` shell.
 
 Bash:
+```bash
+shdoc --completion=bash | sudo tee /etc/bash_completion.d/shdoc > /dev/null
 ```
-sudo shdoc --completion=bash 1> /etc/bash_completion.d/shdoc
-```
-
 
 ZSH:
+```bash
+shdoc --completion=zsh | sudo tee /usr/share/zsh/site-functions/shdoc > /dev/null
 ```
-sudo shdoc --completion=zsh 1> /usr/share/zsh/site-functions/shdoc
-```
-
 
 Fish:
-```
-sudo shdoc --completion=fish 1> /usr/share/fish/vendor_completions.d/shdoc.fish
+```bash
+shdoc --completion=fish | sudo tee /usr/share/fish/vendor_completions.d/shdoc.fish > /dev/null
 ```
 
 ### Usage
@@ -69,8 +81,8 @@ sudo shdoc --completion=fish 1> /usr/share/fish/vendor_completions.d/shdoc.fish
 
 | Branch | CI       | Coveralls |
 |--------|----------|-----------|
-| `master` | [![CI](https://kaos.sh/w/shdoc/ci.svg?branch=master)](https://kaos.sh/w/shdoc/ci?query=branch:master) | [![Coverage Status](https://kaos.sh/c/shdoc.svg?branch=master)](https://kaos.sh/c/shdoc?branch=master) |
-| `develop` | [![CI](https://kaos.sh/w/shdoc/ci.svg?branch=develop)](https://kaos.sh/w/shdoc/ci?query=branch:develop) | [![Coverage Status](https://kaos.sh/c/shdoc.svg?branch=develop)](https://kaos.sh/c/shdoc?branch=develop) |
+| `master` | [![CI](https://github.com/essentialkaos/shdoc/actions/workflows/ci.yml/badge.svg?branch=master)](https://kaos.sh/w/shdoc/ci?query=branch:master) | [![Coverage Status](https://coveralls.io/repos/github/essentialkaos/shdoc/badge.svg?branch=master)](https://kaos.sh/c/shdoc?branch=master) |
+| `develop` | [![CI](https://github.com/essentialkaos/shdoc/actions/workflows/ci.yml/badge.svg?branch=develop)](https://kaos.sh/w/shdoc/ci?query=branch:develop) | [![Coverage Status](https://coveralls.io/repos/github/essentialkaos/shdoc/badge.svg?branch=develop)](https://kaos.sh/c/shdoc?branch=develop) |
 
 ### Contributing
 
