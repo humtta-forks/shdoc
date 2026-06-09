@@ -50,6 +50,7 @@ const (
 	OPT_HELP     = "h:help"
 	OPT_VER      = "v:version"
 
+	OPT_UPDATE       = "U:update"
 	OPT_VERB_VER     = "vv:verbose-version"
 	OPT_COMPLETION   = "completion"
 	OPT_GENERATE_MAN = "generate-man"
@@ -76,6 +77,7 @@ var optMap = options.Map{
 // Run is main application function
 func Run(gitRev string, gomod []byte) {
 	preConfigureUI()
+	preConfigureOptions()
 
 	args, errs := options.Parse(optMap)
 
@@ -103,6 +105,8 @@ func Run(gitRev string, gomod []byte) {
 			WithApps(apps.Bash()).
 			Print()
 		os.Exit(0)
+	case withSelfUpdate && options.GetB(OPT_UPDATE):
+		os.Exit(updateBinary())
 	case options.GetB(OPT_HELP), len(args) == 0:
 		genUsage().Print()
 		os.Exit(0)
@@ -126,6 +130,11 @@ func preConfigureUI() {
 	if !tty.IsTTY() {
 		fmtc.DisableColors = true
 	}
+}
+
+// preConfigureOptions preconfigures command-line options based on build tags
+func preConfigureOptions() {
+	optMap.SetIf(withSelfUpdate, OPT_UPDATE, &options.V{Type: options.MIXED})
 }
 
 // configureUI configures user interface

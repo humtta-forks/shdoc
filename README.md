@@ -40,6 +40,20 @@ To install the latest prebuilt version of `shdoc`, do:
 bash <(curl -fsSL https://apps.kaos.st/get) shdoc
 ```
 
+### Upgrading
+
+Since version `0.11.0` you can update `shdoc` to the latest release using [self-update feature](https://github.com/essentialkaos/.github/blob/master/APPS-UPDATE.md):
+
+```bash
+shdoc --update
+```
+
+This command will runs a self-update in interactive mode. If you want to run a quiet update (_no output_), use the following command:
+
+```bash
+shdoc --update=quiet
+```
+
 ### Command-line completion
 
 You can generate completion for `bash`, `zsh` or `fish` shell.
