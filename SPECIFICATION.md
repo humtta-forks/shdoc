@@ -1,7 +1,7 @@
 # shdoc — Bash Script Documentation Format Specification
 
 **Version:** 1.0.0  
-**Status:** Final
+**Status:** Final  
 **Published:** 10 June 2026
 
 ---
