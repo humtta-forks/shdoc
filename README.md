@@ -14,7 +14,7 @@
 
 <br/>
 
-`shdoc` is a tool for viewing and exporting documentation for shell scripts.
+`shdoc` is a tool for viewing and exporting documentation for shell scripts. The documentation format is described in the [specification](SPECIFICATION.md).
 
 ### Usage Demo
 
