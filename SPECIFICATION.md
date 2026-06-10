@@ -1,17 +1,16 @@
 # shdoc — Bash Script Documentation Format Specification
 
 **Version:** 1.0.0  
-**Status:** Draft
+**Status:** Final
+**Published:** 10 June 2026
 
-***
+---
 
 ## Overview
 
 `shdoc` is a structured inline comment documentation format for Bash scripts, inspired by JavaDoc. It defines a consistent way to annotate functions, variables, and constants directly in source code, enabling both human readability and automated documentation generation.
 
 The format is designed to be minimally intrusive: documentation blocks are plain `#`-prefixed comments that require no special tooling to read in source form.
-
-***
 
 ## Design Principles
 
@@ -20,8 +19,6 @@ The format is designed to be minimally intrusive: documentation blocks are plain
 - **Concise** — each field fits on one line; multi-line descriptions use stacked `#` lines
 - **Machine-parseable** — field names follow a fixed keyword syntax (`# Key: Value`)
 - **Separation of public and private** — a dash marker (`# -`) signals internal/private entities
-
-***
 
 ## Comment Block Structure
 
@@ -43,8 +40,6 @@ someFunction() {
   ...
 }
 ```
-
-***
 
 ## Block Sections
 
@@ -126,8 +121,6 @@ Multiple examples may be stacked without a separator:
 # AddCommand "kill" "Kill connections" "myKillFunc"
 ```
 
-***
-
 ## Private / Internal Marker
 
 Entities that are **internal implementation details** and not part of the public API are marked with a lone dash on the first line of their doc block:
@@ -147,8 +140,6 @@ internalHelper() {
 The `# -` marker serves the same role as `@private` in JavaDoc. It signals that the entity should be excluded from generated public documentation.
 
 When both a dash marker and a description are present, the dash occupies a line by itself followed by a blank comment separator before the description.
-
-***
 
 ## Variable and Constant Documentation
 
@@ -184,8 +175,6 @@ kv[use_colors]=true
 kv[log]=""
 ```
 
-***
-
 ## Type System
 
 shdoc uses a small set of standard type names. Types are always written in **Title Case** inside parentheses.
@@ -203,8 +192,6 @@ For `Echo` return values, the type follows the description in parentheses:
 # Echo: Owner name (String)
 # Echo: Process ID (Number)
 ```
-
-***
 
 ## Complete Annotated Example
 
@@ -263,8 +250,6 @@ getLimitsCmd() {
 }
 ```
 
-***
-
 ## File-Level Documentation
 
 File-level documentation uses a comment block at the top of the script, before any code. It is a freeform description block without structured fields:
@@ -278,8 +263,6 @@ File-level documentation uses a comment block at the top of the script, before a
 # intended audience, and usage context.
 ```
 
-***
-
 ## Section Separators
 
 Visual separator lines of repeated `#` characters may be used to divide logical sections of a file. These are purely cosmetic and carry no semantic meaning:
@@ -287,8 +270,6 @@ Visual separator lines of repeated `#` characters may be used to divide logical 
 ```bash
 ################################################################################
 ```
-
-***
 
 ## Field Reference Summary
 
@@ -302,8 +283,6 @@ Visual separator lines of repeated `#` characters may be used to divide logical 
 | `Example:`  | No              | Functions       | `# Example:` followed by code lines    |
 | `# -`       | No              | Any entity      | First line of block to mark as private |
 
-***
-
 ## Alias / Compatibility Stub Documentation
 
 When a function is a pure alias or thin wrapper for another function (for backwards compatibility), it should be marked with `# -` and only a brief one-line description or no description at all, deferring full documentation to the canonical function:
@@ -315,7 +294,7 @@ getPid() {
 }
 ```
 
-***
+---
 
 ## Grammar (EBNF)
 
